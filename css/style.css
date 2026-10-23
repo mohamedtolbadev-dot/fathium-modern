@@ -410,3 +410,48 @@ body{background:var(--deep2)}
 #bar{background:var(--deep2);border-top:1px solid var(--brand)}
 #bar .text-mute{color:rgba(255,255,255,.7)}
 #bar .text-deep{color:var(--gold-lt)}
+
+/* ===== Mobile fixes (tested at 320/360/375/414) ===== */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+/* numbers + currency: always "499 DH" (not "DH 499") in RTL */
+.num{direction:ltr;unicode-bidi:isolate;display:inline-block}
+.price-band .now{direction:rtl}
+.price-band .now .old{display:inline-block}
+.offer-card .num{display:block;text-align:right}
+/* badges never break onto their own line */
+.opt b .bg-brand,.opt b span.rounded-full{display:inline-block;white-space:nowrap;margin-inline-start:6px}
+@media(max-width:480px){
+ /* offer rows: title + price on one line, details below */
+ .opt{flex-wrap:nowrap;gap:10px;padding:12px 14px}
+ .opt:has(input:checked){padding:11px 13px}
+ .opt>span.flex-1{flex:1 1 auto;min-width:0}
+ .opt b{font-size:1rem}
+ .opt .num.text-2xl{font-size:1.35rem;flex:none}
+ /* section rhythm */
+ .sec-title{font-size:1.45rem}
+ .sec-head{margin-bottom:24px}
+ .btn{padding:0 20px}
+ .promo{font-size:1.1rem}
+ /* mobile bar clears the footer */
+ body{padding-bottom:84px}
+ .stat-n{font-size:2.2rem}
+ .big-n{font-size:2.6rem}
+}
+@media(max-width:360px){
+ .trust li{font-size:.72rem}
+ .meal-ic{width:48px;height:48px}
+ .meal-ic svg{width:1.6rem;height:1.6rem}
+ .benefit{flex-direction:column;align-items:flex-start}
+}
+
+/* ===== Solid green #094129 everywhere (no green gradients) ===== */
+:root{--bg:#094129;--card:#094129}
+body,.hero-section,.sec-green,.stats,.trust,.site-footer,#bar{background:var(--bg)}
+.sec-green .bg-deep{background:var(--bg)}
+.opt,.benefit,.step,.offer-card,.form-card,.meal{background:var(--bg)}
+.opt:has(input:checked){background:#0d5233}
+.meal-ic,.field,.qty-btn,#ok{background:var(--bg)}
+#ok{background:var(--bg)!important}
+.field:focus{background:var(--bg)}
+.chk,.hero-section .chk,.b-n{box-shadow:0 0 0 3px var(--bg),0 0 0 4px var(--brand)}
+.sec-green .price-band{background:transparent}
