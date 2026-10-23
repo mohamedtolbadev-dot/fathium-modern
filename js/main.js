@@ -17,13 +17,9 @@ function render(){
   document.querySelectorAll('input[type=radio]').forEach(r=>r.checked=r.value===offer);
   $('qty').textContent=qty; $('ql').textContent=offer==='bundle'?'عدد العروض (كل عرض = علبتين)':'عدد العلب';
   const c=calc();
-  if(!c){['s-offer','s-qty','s-sub','s-save','s-del','s-total'].forEach(i=>$(i).textContent='—');$('b-offer').textContent='اختار العرض';$('b-price').textContent='من 299 DH';return;}
-  $('s-offer').textContent=c.label;$('s-qty').textContent=c.q;$('s-sub').textContent=fmt(c.sub);
-  $('s-save').textContent=c.save?fmt(c.save):'—';
-  $('s-del').textContent=c.fee===0?'مجاناً':c.fee==null?'تُحدد مصاريف التوصيل قبل تأكيد الطلب':fmt(c.fee);
-  $('s-total').textContent=c.total==null?fmt(c.sub)+' + التوصيل':fmt(c.total);
+  if(!c){$('b-offer').textContent='اختار العرض';$('b-price').textContent='من 299 DH';return;}
   $('b-offer').textContent=c.label;$('b-price').textContent=fmt(c.sub);
-  bump($('s-total'));
+  bump($('b-price'));
 }
 function updateHeroPricing(){
   const p=$('hero-price'),o=$('hero-original-price'),b=$('hero-save-badge');

@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>بروثين رشاقة من FATHIUM | مكمل غذائي 1 كيلوغرام</title>
 <meta name="description" content="بروثين رشاقة من FATHIUM: مكمل غذائي للنساء والرجال بتركيبة متنوعة فعبوة 1 كيلوغرام. علبة بـ 299 درهم أو جوج علب بـ 499 درهم مع التوصيل مجاناً.">
 <meta property="og:title" content="بروثين رشاقة من FATHIUM">
@@ -22,7 +22,7 @@
  <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
   <a href="#top" class="flex items-center gap-2"><img src="./images/logo.jpg" alt="" width="40" height="45" class="h-10 w-auto"><span class="latin text-deep text-lg font-semibold">FATHIUM</span></a>
   <nav class="hidden md:flex gap-8 text-sm text-mute" aria-label="التنقل"><a href="#details" class="hover:text-brand">المنتج</a><a href="#ingredients" class="hover:text-brand">المكونات</a><a href="#usage" class="hover:text-brand">الاستعمال</a><a href="#offers" class="hover:text-brand">العروض</a><a href="#how" class="hover:text-brand">طريقة الطلب</a></nav>
-  <a href="#order" class="btn !min-h-[40px] !px-5 text-sm">اطلب الآن</a>
+  <a href="#order" class="btn !min-h-[44px] !px-5 text-sm">اطلب الآن</a>
  </div>
 </header>
 
@@ -35,7 +35,7 @@
    <div class="hero-frame">
     <span class="hero-tag t1">1 KG</span>
     <span class="hero-tag t2">16 مكوناً</span>
-    <img src="./images/product.jpg" alt="علبة بروثين رشاقة Herbal Protein من FATHIUM بوزن 1 كيلوغرام" width="450" height="650" class="h-80 md:h-[30rem] w-auto object-contain relative z-[1]" fetchpriority="high">
+    <img src="./images/product.jpg" alt="علبة بروثين رشاقة Herbal Protein من FATHIUM بوزن 1 كيلوغرام" width="450" height="650" class="h-60 sm:h-72 md:h-[30rem] w-auto object-contain relative z-[1]" fetchpriority="high">
    </div>
   </div>
   <div class="lg:col-span-7 lg:order-2">
@@ -43,7 +43,7 @@
    <h1 class="hero-title">بروثين رشاقة<span class="latin block text-lg md:text-2xl font-semibold text-brand mt-4" dir="ltr">— BY FATHIUM</span></h1>
    <p class="mt-6 text-mute text-lg max-w-md">مكمل غذائي للنساء والرجال، بمكونات نباتية متنوعة، فعلبة عملية بوزن 1 كيلوغرام.</p>
 
-   <div class="flex items-baseline gap-4 mt-6">
+   <div class="flex flex-wrap items-baseline gap-x-4 gap-y-2 mt-6">
     <span class="num text-5xl text-deep" id="hero-price">299 <small class="text-lg">DH</small></span>
     <span class="text-mute line-through num text-xl" id="hero-original-price" style="display:none;">598 DH</span>
     <span class="border border-brand text-brand px-3 py-1 rounded-full text-sm font-semibold bg-white" id="hero-save-badge" style="display:none;">توفير 99 درهم</span>
@@ -216,8 +216,8 @@
  <div class="max-w-6xl mx-auto px-5">
   <div class="sec-index"><b>07</b><i class="text-brand"></i></div>
   <h2 class="sec-title mb-12">أكمل طلبك الآن</h2>
-  <form id="f" novalidate class="grid lg:grid-cols-12 gap-8">
-   <div class="lg:col-span-7 space-y-6">
+  <form id="f" novalidate class="max-w-3xl mx-auto">
+   <div class="space-y-6">
     <fieldset class="border border-line rounded-3xl p-6">
      <legend class="font-bold text-deep px-2 text-base">اختر العرض المناسب لك</legend>
      <div class="grid sm:grid-cols-2 gap-4 mt-2">
@@ -251,24 +251,12 @@
       <button type="button" id="qp" class="qty-btn" aria-label="زيادة عدد العلب">+</button>
      </div>
     </fieldset>
-   </div>
-
-   <aside class="lg:col-span-5 lg:sticky lg:top-24 h-fit">
-    <div class="summary-card">
-     <h3 class="head text-xl">ملخص الطلب</h3>
-     <dl class="text-base divide-y divide-line" aria-live="polite">
-      <div class="flex justify-between py-4"><dt class="text-mute">العرض المختار</dt><dd id="s-offer" class="font-medium">—</dd></div>
-      <div class="flex justify-between py-4"><dt class="text-mute">عدد العلب</dt><dd id="s-qty" class="font-medium">—</dd></div>
-      <div class="flex justify-between py-4"><dt class="text-mute">المجموع الفرعي</dt><dd id="s-sub" class="num font-medium">—</dd></div>
-      <div class="flex justify-between py-4"><dt class="text-mute">التوفير</dt><dd id="s-save" class="num text-brand font-bold">—</dd></div>
-      <div class="flex justify-between py-4"><dt class="text-mute">التوصيل</dt><dd id="s-del" class="font-medium text-left">—</dd></div>
-      <div class="flex justify-between pt-6 text-xl font-bold text-deep"><dt>الإجمالي النهائي</dt><dd id="s-total" class="num text-left">—</dd></div>
-     </dl>
-     <button type="submit" class="btn w-full mt-8 text-lg">أكد الطلب الآن</button>
+    <div>
+     <button type="submit" class="btn w-full text-lg">أكد الطلب الآن</button>
      <p class="text-center text-sm text-mute mt-4">✓ لن يتم خصم أي مبلغ الآن</p>
      <div id="ok" class="hidden mt-4 border border-brand bg-white rounded-xl p-4 text-sm" role="status" tabindex="-1"></div>
     </div>
-   </aside>
+   </div>
   </form>
  </div>
 </section>
@@ -286,7 +274,7 @@
  </div>
 </footer>
 
-<div id="bar" class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white border-t border-line px-4 py-2 flex items-center gap-3">
+<div id="bar" class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white border-t border-line px-4 pt-2 flex items-center gap-3" style="padding-bottom:max(.5rem,env(safe-area-inset-bottom))">
  <div class="leading-tight"><p id="b-offer" class="text-xs text-mute">اختار العرض</p><p id="b-price" class="num text-deep text-lg">من 299 DH</p></div>
  <a href="#order" class="btn flex-1">اطلب الآن</a>
 </div>
