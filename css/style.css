@@ -1,4 +1,4 @@
-:root{--brand:#B89A55;--deep:#1B4228;--ink:#18231D;--mute:#5E6B63;--line:#E2E8DF;--soft:#E8F3EA;--red:#C8141B;--red2:#9E0D13}
+:root{--brand:#B89A55;--deep:#1B4228;--ink:#18231D;--mute:#5E6B63;--line:#E2E8DF;--soft:#E8F3EA;--red:#C8141B;--red2:#9E0D13;--secondary:#B89A55}
 html{scroll-behavior:smooth;scroll-padding-top:72px}
 body{font-family:'Noto Kufi Arabic','Droid Arabic Kufi',Tahoma,sans-serif;color:var(--ink);line-height:1.8;overflow-x:hidden;
  background:#fff radial-gradient(circle at 8% 12%,rgba(23,107,69,.07) 0,transparent 28%),radial-gradient(circle at 95% 40%,rgba(23,107,69,.06) 0,transparent 26%)}
@@ -38,7 +38,7 @@ img{max-width:100%;height:auto}
 .btn svg{width:18px;height:18px}
 .btn-block{display:flex;width:100%;border-radius:14px}
 .btn-ghost{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border-radius:14px;font-weight:700;background:#fff;color:var(--brand);border:2px solid var(--brand);transition:all .25s}
-.btn-ghost:hover{background:var(--secondary);color:var(--deep);border-color:var(--secondary)}
+.btn-ghost:hover{background:var(--brand);color:#fff;border-color:var(--brand)}
 .btn-white{background:#fff;color:var(--deep);box-shadow:0 4px 14px rgba(0,0,0,.12)}
 .btn-white:hover{background:var(--soft);color:var(--deep)}
 
