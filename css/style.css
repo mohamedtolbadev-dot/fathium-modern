@@ -1,4 +1,4 @@
-:root{--brand:#176B45;--deep:#103D2B;--ink:#18231D;--mute:#5E6B63;--line:#E2E8DF;--soft:#E8F3EA;--red:#C8141B;--red2:#9E0D13}
+:root{--brand:#B89A55;--deep:#1B4228;--ink:#18231D;--mute:#5E6B63;--line:#E2E8DF;--soft:#E8F3EA;--red:#C8141B;--red2:#9E0D13}
 html{scroll-behavior:smooth;scroll-padding-top:72px}
 body{font-family:'Noto Kufi Arabic','Droid Arabic Kufi',Tahoma,sans-serif;color:var(--ink);line-height:1.8;overflow-x:hidden;
  background:#fff radial-gradient(circle at 8% 12%,rgba(23,107,69,.07) 0,transparent 28%),radial-gradient(circle at 95% 40%,rgba(23,107,69,.06) 0,transparent 26%)}
@@ -19,6 +19,7 @@ img{max-width:100%;height:auto}
 .pill{display:inline-block;background:var(--brand);color:#fff;border-radius:999px;padding:10px 28px;font-weight:700;font-size:clamp(.9rem,2.8vw,1.15rem);box-shadow:0 3px 10px rgba(23,107,69,.25)}
 
 /* Hero */
+.hero-section{overflow:hidden;background:url('../images/bg-hero-section.png') center/cover no-repeat}
 .hero-grid{display:grid;gap:22px;grid-template-columns:1fr 1fr;grid-template-areas:"prod prod" "a b";align-items:center}
 .hero-grid .prod{grid-area:prod;display:flex;justify-content:center}
 .hero-grid .fa{grid-area:a}.hero-grid .fb{grid-area:b}
@@ -37,7 +38,7 @@ img{max-width:100%;height:auto}
 .btn svg{width:18px;height:18px}
 .btn-block{display:flex;width:100%;border-radius:14px}
 .btn-ghost{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border-radius:14px;font-weight:700;background:#fff;color:var(--brand);border:2px solid var(--brand);transition:all .25s}
-.btn-ghost:hover{background:var(--brand);color:#fff}
+.btn-ghost:hover{background:var(--secondary);color:var(--deep);border-color:var(--secondary)}
 .btn-white{background:#fff;color:var(--deep);box-shadow:0 4px 14px rgba(0,0,0,.12)}
 .btn-white:hover{background:var(--soft);color:var(--deep)}
 
@@ -63,7 +64,7 @@ img{max-width:100%;height:auto}
 .price-band{background:var(--soft);text-align:center;padding:28px 20px 8px}
 .price-band .old{color:var(--mute);text-decoration:line-through;font-size:1.4rem}
 .price-band .now{color:var(--brand);font-size:clamp(2.6rem,9vw,3.6rem);line-height:1.1}
-.save-chip{display:inline-block;background:var(--red);color:#fff;border-radius:999px;padding:3px 14px;font-size:.85rem;font-weight:700}
+.save-chip{display:inline-block;background:var(--secondary);color:var(--deep);border-radius:999px;padding:3px 14px;font-size:.85rem;font-weight:700}
 
 /* Section system */
 .sec-index{display:flex;align-items:center;gap:14px;margin-bottom:18px}
@@ -94,7 +95,7 @@ img{max-width:100%;height:auto}
 .step .big-n{position:absolute;top:12px;left:20px;font-family:'Josefin Sans',sans-serif;font-weight:700;font-size:3.6rem;line-height:1;color:#fff;-webkit-text-stroke:1.5px var(--line)}
 .step.solid{background:var(--deep);border-color:var(--deep);color:#fff}
 .step.solid h3{color:#fff}
-.step.solid .big-n{-webkit-text-stroke:1.5px rgba(255,255,255,.35);color:var(--deep)}
+.step.solid .big-n{-webkit-text-stroke:1.5px rgba(255,255,255,.35);color:#fff}
 .offer-card{border:1px solid var(--line);border-radius:22px;padding:32px;display:flex;flex-direction:column;background:#fff;height:100%;box-shadow:0 6px 24px rgba(16,61,43,.08)}
 .offer-card.featured{background:var(--deep);color:#fff;border-color:var(--deep)}
 .offer-card.featured h3,.offer-card.featured .num{color:#fff}
@@ -107,7 +108,7 @@ img{max-width:100%;height:auto}
 .err{color:#b3261e;font-size:.85rem;min-height:1.3em}
 .qty-btn{width:44px;height:44px;border:1px solid var(--line);border-radius:10px;background:#fff;font-size:1.4rem;transition:border-color .2s,color .2s}
 .qty-btn:hover{border-color:var(--brand);color:var(--brand)}
-.guarantee{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;justify-content:space-between;background:#FFF6D6;border-radius:12px;padding:10px 14px;font-size:.85rem;font-weight:600;color:var(--deep)}
+.guarantee{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;justify-content:space-between;background:var(--secondary);border-radius:12px;padding:10px 14px;font-size:.85rem;font-weight:600;color:var(--deep)}
 
 /* FAQ */
 summary{list-style:none;cursor:pointer;min-height:60px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-weight:600;color:var(--deep)}
