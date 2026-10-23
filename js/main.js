@@ -5,7 +5,7 @@ const ING=['بتيكولا','بذور الأكبي','الصويا','بذور ا�
 const CITIES=['الدار البيضاء','الرباط','فاس','مراكش','طنجة','أكادير','مكناس','وجدة','القنيطرة','تطوان','سلا','تمارة','المحمدية','الجديدة','بني ملال','خريبكة','الناظور','تازة','سطات','برشيد','المضيق','العرائش','القصر الكبير','الحسيمة','آسفي','الصويرة','ورزازات','الرشيدية','الخميسات','تاوريرت','بركان','وزان','تارودانت','إنزكان','أيت ملول','الداخلة','العيون','كلميم','الفقيه بن صالح','سيدي قاسم','سيدي سليمان','تيفلت','أزرو','إفران','شفشاون','مرتيل','الفنيدق'];
 const $=id=>document.getElementById(id), fmt=n=>n.toLocaleString('en')+' DH';
 let offer=null, qty=1;
-$('ing').innerHTML=ING.map((n,i)=>`<li style="--i:${i}"><span class="num">${String(i+1).padStart(2,'0')}</span><span>${n}</span></li>`).join('');
+$('ing').innerHTML=ING.map((n,i)=>`<li class="reveal flex items-baseline gap-2 border border-white/30 rounded-full px-4 py-2 text-sm" style="--d:${(i*0.05).toFixed(2)}s"><span class="num text-xs text-gold">${String(i+1).padStart(2,'0')}</span><span>${n}</span></li>`).join('');
 $('cities').innerHTML=CITIES.map(c=>`<option value="${c}">`).join('');
 function calc(){
   if(!offer) return null;
@@ -53,13 +53,31 @@ new IntersectionObserver(([e])=>$('bar').style.display=e.isIntersecting?'none':'
 document.querySelectorAll('[data-pick]').forEach(b=>b.addEventListener('click',()=>{offer=b.dataset.pick;$('e-offer').textContent='';render();updateHeroPricing();$('order').scrollIntoView({behavior:'smooth'});}));
 render();
 
-/* ---------- Motion: hero sequence + checklist cascades ---------- */
+/* ---------- Animations ---------- */
 (function(){
   if(!document.documentElement.classList.contains('js')) return;
-  requestAnimationFrame(()=>document.querySelectorAll('.hseq').forEach(el=>el.classList.add('in')));
-  document.querySelectorAll('.cascade').forEach(c=>c.querySelectorAll('li').forEach((li,i)=>li.style.setProperty('--i',i)));
+  // ترتيب الظهور داخل نفس الحاوية
+  const sel='.hero-section .reveal-hero,.sec-index,.sec-title,#details dl>div,#details img,.row-item,.step,.offer-card,.summary-card,#order fieldset,details,.stat-band .big,#usage img,#ingredients img,footer .grid>*';
+  const groups=new Map();
+  document.querySelectorAll(sel).forEach(el=>{
+    el.classList.add('reveal');
+    const k=el.parentElement; const i=groups.get(k)||0; groups.set(k,i+1);
+    if(!el.style.getPropertyValue('--d')) el.style.setProperty('--d',(Math.min(i,6)*0.09).toFixed(2)+'s');
+  });
+  // عناصر الـ Hero
+  document.querySelectorAll('.hero-section h1,.hero-section .max-w-lg,.hero-section .flex.items-baseline,.hero-section p.inline-flex,.hero-section .mt-8,.hero-frame').forEach((el,i)=>{el.classList.add('reveal');el.style.setProperty('--d',(i*0.1).toFixed(2)+'s');});
+  document.querySelectorAll('.hero-tag').forEach((el,i)=>el.style.setProperty('--d',(0.6+i*0.15)+'s'));
+  // عدّاد الأرقام
+  const count=el=>{
+    const to=+el.dataset.count,t0=performance.now(),dur=1200;
+    const step=t=>{const p=Math.min((t-t0)/dur,1),e=1-Math.pow(1-p,3);el.textContent=Math.round(to*e);if(p<1)requestAnimationFrame(step);};
+    el.textContent=0;requestAnimationFrame(step);
+  };
   const io=new IntersectionObserver(es=>es.forEach(e=>{
-    if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
-  }),{threshold:.15});
-  document.querySelectorAll('.cascade').forEach(el=>io.observe(el));
+    if(!e.isIntersecting) return;
+    e.target.classList.add('in');
+    e.target.querySelectorAll&&e.target.querySelectorAll('[data-count]').forEach(count);
+    io.unobserve(e.target);
+  }),{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal,.hero-tag').forEach(el=>io.observe(el));
 })();

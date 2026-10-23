@@ -1,1 +1,1 @@
-tailwind.config={theme:{extend:{colors:{brand:'#176B45',deep:'#103D2B',ink:'#18231D',mute:'#68736A',gold:'#B89A55',leaf:'#58B368',line:'#E2E8DF'}}}}
+tailwind.config={theme:{extend:{colors:{brand:'#176B45',deep:'#103D2B',ink:'#18231D',mute:'#68736A',gold:'#B89A55',line:'#E2E8DF'}}}}
