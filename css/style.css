@@ -131,6 +131,41 @@ details p{padding-bottom:1.25rem}
  .sec-index i{transform:none}
 }
 
+/* Responsive hardening */
+html,body{max-width:100%;overflow-x:hidden}
+.opt>span,.feat,.why-card,.band-item{min-width:0}
+.opt b,.feat,.why-card h3,.why-card p,.band-item h3,.band-item p{overflow-wrap:anywhere}
+.promo{overflow-wrap:anywhere}
+.pill{max-width:100%;border-radius:20px;line-height:1.6;padding:10px 22px}
+.price-band .now{display:flex;flex-wrap:wrap;justify-content:center;align-items:baseline;gap:6px 14px}
+.guarantee{gap:10px 18px}
+input,select,textarea{font-size:16px}
+video,iframe{max-width:100%}
+@media(min-width:641px) and (max-width:1023px){
+ .hero-frame img{height:22rem!important}
+ .why-card{padding:20px 16px}
+}
+@media(max-width:480px){
+ #details .grid-cols-12>img{grid-column:span 12 / span 12;max-height:320px}
+ .opt{flex-wrap:wrap}
+ .offer-card .num{font-size:2.6rem}
+}
+@media(max-width:400px){
+ .promo{font-size:1.15rem;padding:12px 12px}
+ .pill{font-size:.85rem;padding:8px 16px}
+ .feat{font-size:.85rem;gap:8px}
+ .chk{width:26px;height:26px;font-size:.8rem}
+ .band-ic{width:50px;height:50px}
+ .band-ic svg{width:26px;height:26px}
+ .band-item h3{font-size:.95rem}
+ .band-item p{font-size:.7rem}
+ .why-grid{gap:10px}
+ .why-card{padding:14px 10px}
+ .sec-title{font-size:1.4rem}
+ .topbar .brand{font-size:1.4rem}
+ .form-card{padding:14px}
+}
+
 /* Mobile */
 @media(max-width:640px){
  .offer-card{padding:26px}
