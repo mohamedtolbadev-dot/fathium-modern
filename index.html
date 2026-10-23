@@ -21,7 +21,7 @@
 <header class="topbar sticky top-0 z-50">
  <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
   <a href="#top" class="flex items-center gap-2"><img src="./images/logo.jpg" alt="" width="44" height="49" class="h-11 w-auto"><span class="brand">FATHIUM</span></a>
-  <nav class="hidden md:flex gap-8 text-sm text-mute" aria-label="التنقل"><a href="#details" class="hover:text-brand">المنتج</a><a href="#ingredients" class="hover:text-brand">المكونات</a><a href="#usage" class="hover:text-brand">الاستعمال</a><a href="#offers" class="hover:text-brand">العروض</a><a href="#how" class="hover:text-brand">طريقة الطلب</a></nav>
+  <nav class="hidden md:flex gap-8 text-sm text-mute" aria-label="التنقل"><a href="#details" class="hover:text-brand">المنتج</a><a href="#usage" class="hover:text-brand">الاستعمال</a><a href="#ingredients" class="hover:text-brand">المكونات</a><a href="#offers" class="hover:text-brand">العروض</a><a href="#how" class="hover:text-brand">طريقة الطلب</a></nav>
   <a href="#order" class="icon-btn" aria-label="اطلب الآن"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 002 1.6h9.7a2 2 0 002-1.6L23 6H6"/></svg></a>
  </div>
 </header>
@@ -64,122 +64,127 @@
  </div>
 </section>
 
-<!-- ICON BAND -->
-<section class="band">
- <div class="max-w-6xl mx-auto px-4 py-8 grid grid-cols-3 gap-2 divide-x divide-x-reverse divide-brand/20">
-  <div class="band-item"><span class="band-ic"><svg viewBox="0 0 24 24"><path d="M5 19c0-8 5-14 14-14 0 9-6 14-14 14zM5 19l8-8"/></svg></span><h3>نباتي</h3><p>16 مكوناً متنوعاً مذكورة بالكامل</p></div>
-  <div class="band-item"><span class="band-ic"><svg viewBox="0 0 24 24"><path d="M7 3v8M5 3v5a2 2 0 004 0V3M7 11v10M17 3c-2 2-2 6 0 8v10"/></svg></span><h3>فتح الشهية</h3><p>مكمل غذائي مع الوجبات اليومية</p></div>
-  <div class="band-item"><span class="band-ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-4 3-6 6-6s6 2 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14c3 0 5 2 5 5"/></svg></span><h3>للجميع</h3><p>للنساء والرجال</p></div>
+<!-- TRUST STRIP -->
+<section class="trust sec-green" aria-label="ضمانات الطلب">
+ <ul class="max-w-6xl mx-auto px-4 py-4 grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-3">
+  <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></svg>الدفع عند الاستلام</li>
+  <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M1 3h14v13H1zM15 8h4l4 4v4h-8"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>توصيل مجاني مع جوج علب</li>
+  <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19c0-8 5-14 14-14 0 9-6 14-14 14zM5 19l8-8"/></svg>مكونات نباتية متنوعة</li>
+  <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.4 1.8.7 2.7a2 2 0 01-.5 2.1L8.1 9.8a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.7.7a2 2 0 011.7 2z"/></svg>تأكيد الطلب بالهاتف</li>
+ </ul>
+</section>
+
+<!-- STATS -->
+<section class="stats sec-green">
+ <div class="max-w-5xl mx-auto px-4 py-10 grid grid-cols-3 gap-4 text-center">
+  <div><p class="stat-n">1<small>KG</small></p><p class="stat-l">فكل علبة</p></div>
+  <div><p class="stat-n">16</p><p class="stat-l">مكوناً مذكورة بالكامل</p></div>
+  <div><p class="stat-n">3</p><p class="stat-l">معالق كبار فاليوم</p></div>
  </div>
 </section>
 
-<!-- WHY (cards around product) -->
-<section class="bg-white">
- <div class="max-w-6xl mx-auto px-4 py-14">
-  <h2 class="sec-title text-center mb-8">لماذا تختار FATHIUM؟</h2>
-  <div class="why-wrap">
-   <div class="why-grid">
-    <div class="why-card"><span class="chk">✓</span><h3>مكونات واضحة</h3><p>لائحة المكونات مذكورة كاملة، دون مواد مخفية.</p></div>
-    <div class="why-card"><span class="chk">✓</span><h3>عروض مرنة</h3><p>علبة واحدة أو جوج علب حسب احتياجاتك.</p></div>
+<!-- BENEFITS -->
+<section id="details" class="sec-green">
+ <div class="max-w-6xl mx-auto px-4 py-12 md:py-20">
+  <div class="sec-head">
+   <span class="kicker">علاش بروثين رشاقة؟</span>
+   <h2 class="sec-title">3 أسباب باش تدخلو لروتينك اليومي</h2>
+   <p class="sub">مكمل غذائي بمكونات نباتية متنوعة، ماشي دواء، كيتزاد لوجباتك العادية.</p>
+  </div>
+  <div class="grid lg:grid-cols-12 gap-8 items-center">
+   <div class="lg:col-span-5 relative">
+    <img src="./images/olive.jpg" alt="علبة FATHIUM Herbal Protein وسط أشجار الزيتون" width="720" height="950" loading="lazy" class="rounded-3xl w-full h-72 sm:h-96 lg:h-auto max-h-[540px] object-cover shadow-xl">
+    <span class="float-badge">علبة 1 كيلو</span>
    </div>
-   <div class="why-mid"><img src="./images/product.jpg" alt="" width="450" height="650" loading="lazy" class="h-56 md:h-72 w-auto object-contain drop-shadow-xl"></div>
-   <div class="why-grid">
-    <div class="why-card"><span class="chk">✓</span><h3>توفير مع جوج علب</h3><p>كتوفّر 99 درهم والتوصيل مجاني لكل المغرب.</p></div>
-    <div class="why-card"><span class="chk">✓</span><h3>سهل الاستعمال</h3><p>معلقة كبيرة ورا كل وجبة، وتحضير سريع.</p></div>
+   <div class="lg:col-span-7 grid gap-4">
+    <article class="benefit"><span class="b-n">01</span><div><h3>كيفتح الشهية</h3><p>كيساعدك تقبل على وجباتك بشهية أحسن، وهادشي هو الأساس ديال أي نظام لزيادة الوزن.</p></div></article>
+    <article class="benefit"><span class="b-n">02</span><div><h3>كيدعم زيادة الوزن</h3><p>تركيبة غنية بمكونات متنوعة، كتخدم مزيان مع نظام غذائي متوازن.</p></div></article>
+    <article class="benefit"><span class="b-n">03</span><div><h3>للنساء والرجال</h3><p>معلقة كبيرة ورا كل وجبة وتحضير فدقيقة، بلا تعقيد.</p></div></article>
+    <a href="#order" class="btn btn-block">بغيت نطلب دابا</a>
    </div>
   </div>
  </div>
 </section>
 
-<!-- DETAILS + ROLE -->
-<section id="details" class="bg-white border-t border-line">
- <div class="max-w-6xl mx-auto px-4 py-16 grid lg:grid-cols-12 gap-12 items-start">
-  <div class="lg:col-span-7">
-   <div class="sec-index"><b>01</b><i class="text-brand"></i></div>
-   <h2 class="sec-title mb-6">تعرف على بروثين رشاقة</h2>
-   <p class="text-mute leading-relaxed mb-8">بروثين رشاقة من FATHIUM هو مكمل غذائي بمكونات متنوعة من مصادر نباتية ومكونات أخرى، كيتقدم فعلبة بوزن 1 كيلو. هاد المنتوج ماشي دواء، وكيتوجه للناس لي بغاو يضيفو مكمل غذائي لروتينهم اليومي.</p>
-   <div class="border-t border-line">
-    <div class="row-item"><span class="n">01</span><div><h3>كيفتح الشهية</h3><p>مكمل غذائي كيساعد على فتح الشهية وتحسين الإقبال على الوجبات.</p></div></div>
-    <div class="row-item"><span class="n">02</span><div><h3>كيزيد فالوزن</h3><p>تركيبة غنية بمكونات متنوعة، كتدعم زيادة الوزن مع نظام غذائي متوازن.</p></div></div>
-    <div class="row-item"><span class="n">03</span><div><h3>للنساء والرجال</h3><p>مكمل غذائي كيتدخل فالروتين اليومي ديال النساء والرجال.</p></div></div>
-   </div>
-  </div>
-  <div class="lg:col-span-5 bg-deep text-white rounded-3xl p-10">
-   <p class="text-lg font-bold mb-6">مناسب لـ</p>
-   <ul class="space-y-4 text-[15px]">
-    <li class="flex items-center gap-3 border-b border-white/20 pb-4"><span class="num text-sm">01</span>النساء والرجال</li>
-    <li class="flex items-center gap-3 border-b border-white/20 pb-4"><span class="num text-sm">02</span>المرضعات، كيساعد على إدرار الحليب (حسب البائع)</li>
-    <li class="flex items-center gap-3"><span class="num text-sm">03</span>الأطفال فوق 6 سنوات (حسب البائع)</li>
+<!-- WHO IS IT FOR -->
+<section class="sec-green">
+ <div class="max-w-6xl mx-auto px-4 py-12 md:py-14 grid md:grid-cols-12 gap-5 items-stretch">
+  <img src="./images/lifestyle.jpg" alt="سيدة تحمل كأساً من مشروب" width="360" height="665" loading="lazy" class="md:col-span-5 rounded-3xl w-full h-64 md:h-full md:max-h-[460px] object-cover">
+  <div class="md:col-span-7 bg-deep text-white rounded-3xl p-6 md:p-10 flex flex-col justify-center gold-frame">
+   <p class="text-xl md:text-2xl font-extrabold mb-5 text-gold">مناسب لـ</p>
+   <ul class="space-y-3 text-[15px]">
+    <li class="flex items-center gap-3 border-b border-white/20 pb-3"><span class="num text-sm text-gold">01</span>النساء والرجال</li>
+    <li class="flex items-center gap-3 border-b border-white/20 pb-3"><span class="num text-sm text-gold">02</span>المرضعات، كيساعد على إدرار الحليب (حسب البائع)</li>
+    <li class="flex items-center gap-3"><span class="num text-sm text-gold">03</span>الأطفال فوق 6 سنوات (حسب البائع)</li>
    </ul>
-   <p class="text-xs text-white/70 mt-6 leading-relaxed">هاد المعلومات من عند البائع وماشي بديل لنصيحة الطبيب. استشر طبيباً أو صيدلياً قبل الاستعمال، خصوصاً الحوامل والمرضعات والأطفال.</p>
+   <p class="text-xs text-white/70 mt-5 leading-relaxed">هاد المعلومات من عند البائع وماشي بديل لنصيحة الطبيب. استشر طبيباً أو صيدلياً قبل الاستعمال، خصوصاً الحوامل والمرضعات والأطفال.</p>
   </div>
- </div>
- <div class="max-w-6xl mx-auto px-4 pb-16 grid grid-cols-12 gap-4 items-stretch">
-  <img src="./images/lifestyle.jpg" alt="سيدة تحمل كأساً من مشروب" width="360" height="665" loading="lazy" class="col-span-5 rounded-3xl w-full h-full max-h-[520px] object-cover">
-  <img src="./images/olive.jpg" alt="علبة FATHIUM Herbal Protein وسط أشجار الزيتون" width="720" height="950" loading="lazy" class="col-span-7 rounded-3xl w-full h-full max-h-[520px] object-cover">
  </div>
 </section>
 
-<!-- MINI ORDER -->
-<section class="band">
- <div class="max-w-6xl mx-auto px-4 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
-  <div class="text-center md:text-right"><p class="font-bold text-deep text-xl">جاهز تطلب؟</p><p class="text-sm text-mute mt-1">اختر العرض وكمّل الطلب فدقيقة.</p></div>
-  <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
-   <button type="button" class="btn-ghost" data-pick="single">علبة واحدة · 299 DH</button>
-   <button type="button" class="btn" data-pick="bundle">جوج علب · 499 DH</button>
+<!-- USAGE -->
+<section id="usage" class="sec-green">
+ <div class="max-w-6xl mx-auto px-4 py-12 md:py-20">
+  <div class="sec-head">
+   <span class="kicker">طريقة الاستعمال</span>
+   <h2 class="sec-title">بسيط بزاف: معلقة كبيرة ورا كل وجبة</h2>
+   <p class="sub">ما كتحتاج لا آلة ولا تحضير معقد.</p>
   </div>
+
+  <ol class="meals">
+   <li class="meal"><span class="meal-ic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 18a5 5 0 00-10 0M12 2v7M4.2 10.2l1.4 1.4M1 18h2M21 18h2M18.4 11.6l1.4-1.4M23 22H1M8 6l4-4 4 4"/></svg></span><b>الفطور</b><span>معلقة كبيرة ورا الفطور</span></li>
+   <li class="meal"><span class="meal-ic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg></span><b>الغداء</b><span>معلقة كبيرة ورا الغداء</span></li>
+   <li class="meal"><span class="meal-ic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg></span><b>العشاء</b><span>معلقة كبيرة ورا العشاء</span></li>
+  </ol>
+
+  <h3 class="text-center font-extrabold text-deep text-xl md:text-2xl mt-14 mb-6">جوج طرق باش تحضرو</h3>
+  <div class="grid md:grid-cols-3 gap-6 items-start">
+   <img src="./images/model.jpg" alt="سيدة تحمل علبة بروثين" width="640" height="752" loading="lazy" class="rounded-3xl w-full object-cover object-top max-h-96 md:max-h-none">
+   <div class="grid gap-6">
+    <img src="./images/usage-1.jpg" alt="طريقة الاستعمال الأولى" width="690" height="720" loading="lazy" class="rounded-3xl w-full">
+    <div class="step"><span class="big-n">01</span>
+     <h3 class="font-bold text-deep mb-3 mt-12 text-lg">الطريقة الأولى</h3>
+     <ul class="space-y-2 text-sm leading-relaxed"><li>كتاخدي قرعة ديال الشوكولا.</li><li>كتديريها فحمام مريم حتى كتدوب.</li><li>كتخويها فشي بواطة وكتزيدي عليها المكمل.</li></ul>
+    </div>
+   </div>
+   <div class="grid gap-6">
+    <img src="./images/usage-2.jpg" alt="طريقة الاستعمال الثانية" width="720" height="660" loading="lazy" class="rounded-3xl w-full">
+    <div class="step solid"><span class="big-n">02</span>
+     <h3 class="font-bold mb-3 mt-12 text-lg">الطريقة الثانية</h3>
+     <ul class="space-y-2 text-sm leading-relaxed"><li>كتاخدي معلقة كبيرة مع واحد من هادو: دانون، أو نصف كاس حليب سخون، أو عصير.</li></ul>
+    </div>
+   </div>
+  </div>
+  <p class="text-sm text-mute mt-8 leading-relaxed text-center">طريقة الاستعمال كما وردت من البائع. للمرضعات والحوامل والأطفال، استشر طبيباً أو صيدلياً قبل الاستعمال.</p>
+  <div class="max-w-md mx-auto mt-8"><a href="#offers" class="btn btn-block">شوف العروض</a></div>
  </div>
 </section>
 
 <!-- INGREDIENTS -->
-<section id="ingredients" class="bg-deep text-white on-deep">
- <div class="max-w-6xl mx-auto px-4 py-16 grid lg:grid-cols-12 gap-12 items-center">
+<section id="ingredients" class="sec-green on-deep text-white">
+ <div class="max-w-6xl mx-auto px-4 py-12 md:py-20 grid lg:grid-cols-12 gap-10 items-center">
   <div class="lg:col-span-5">
-   <img src="./images/ingredients.jpg" alt="علبة FATHIUM محاطة بمكونات غذائية" width="720" height="950" loading="lazy" class="rounded-3xl w-full max-h-[460px] object-cover">
+   <img src="./images/ingredients.jpg" alt="علبة FATHIUM محاطة بمكونات غذائية" width="720" height="950" loading="lazy" class="rounded-3xl w-full h-64 lg:h-auto max-h-[460px] object-cover gold-frame">
   </div>
   <div class="lg:col-span-7">
-   <div class="sec-index text-white"><b>02</b><i></i></div>
-   <h2 class="sec-title mb-8">مكونات طبيعية متنوعة</h2>
+   <span class="kicker kicker-on-deep">لا أسرار فالتركيبة</span>
+   <h2 class="sec-title mb-3">16 مكوناً، كلهم مذكورين</h2>
+   <p class="text-white/80 mb-6">كنوريوك لائحة المكونات كاملة قبل ما تطلب.</p>
    <ol id="ing"></ol>
    <p class="mt-8 text-sm text-white/70 leading-relaxed">الأسماء مذكورة كما وردت من البائع. لا تتوفر هنا كميات كل مكون ولا جدول غذائي كامل.</p>
   </div>
  </div>
 </section>
 
-<!-- USAGE -->
-<section id="usage" class="bg-white">
- <div class="max-w-6xl mx-auto px-4 py-16">
-  <div class="sec-index"><b>03</b><i class="text-brand"></i></div>
-  <h2 class="sec-title mb-10">طريقة الاستعمال</h2>
-  <div class="grid md:grid-cols-3 gap-6 items-start">
-   <img src="./images/model.jpg" alt="سيدة تحمل علبة بروثين" width="640" height="752" loading="lazy" class="rounded-3xl w-full object-cover">
-   <img src="./images/usage-1.jpg" alt="طريقة الاستعمال الأولى" width="690" height="720" loading="lazy" class="rounded-3xl w-full">
-   <img src="./images/usage-2.jpg" alt="طريقة الاستعمال الثانية" width="720" height="660" loading="lazy" class="rounded-3xl w-full">
-  </div>
-  <div class="grid md:grid-cols-3 gap-6 mt-8">
-   <div class="step"><span class="big-n">01</span>
-    <h3 class="font-bold text-deep mb-4 mt-12 text-lg">الطريقة الأولى</h3>
-    <ul class="space-y-3 text-sm leading-relaxed"><li>كتاخدي قرعة ديال الشوكولا.</li><li>كتديريها فحمام مريم حتى كتدوب.</li><li>كتخويها فشي بواطة وكتزيدي عليها المكمل.</li></ul>
-   </div>
-   <div class="step"><span class="big-n">02</span>
-    <h3 class="font-bold text-deep mb-4 mt-12 text-lg">الطريقة الثانية</h3>
-    <ul class="space-y-3 text-sm leading-relaxed"><li>كتاخدي معلقة كبيرة مع واحد من هادو: دانون، أو نصف كاس حليب سخون، أو عصير.</li></ul>
-   </div>
-   <div class="step solid"><span class="big-n">03</span>
-    <h3 class="font-bold mb-4 mt-12 text-lg">وقت الاستعمال</h3>
-    <ul class="space-y-3 text-sm leading-relaxed"><li>معلقة كبيرة ورا الفطور.</li><li>معلقة كبيرة ورا الغداء.</li><li>معلقة كبيرة ورا العشاء.</li></ul>
-   </div>
-  </div>
-  <p class="text-sm text-mute mt-8 leading-relaxed">طريقة الاستعمال كما وردت من البائع. للمرضعات والحوامل والأطفال، استشر طبيباً أو صيدلياً قبل الاستعمال.</p>
- </div>
-</section>
-
 <!-- OFFERS -->
-<section id="offers" class="band">
- <div class="max-w-5xl mx-auto px-4 py-16">
-  <div class="sec-index"><b>04</b><i class="text-brand"></i></div>
-  <h2 class="sec-title mb-12">اختر العرض المناسب لك</h2>
-  <div class="grid md:grid-cols-2 gap-10">
+<section id="offers" class="sec-green">
+ <div class="max-w-5xl mx-auto px-4 py-12 md:py-20">
+  <div class="sec-head">
+   <span class="kicker">العروض</span>
+   <h2 class="sec-title">اختار العرض لي كيناسبك</h2>
+   <p class="sub">مع جوج علب كيوّلي الكيلو بـ <b class="num">249.5 DH</b> بدل <b class="num">299 DH</b>.</p>
+  </div>
+  <div class="grid md:grid-cols-2 gap-10 md:gap-8 items-stretch">
    <div class="offer-card">
     <h3 class="font-bold text-xl text-deep">علبة واحدة</h3>
     <p class="text-mute text-sm mt-1">1 كيلوغرام</p>
@@ -191,7 +196,7 @@
     <span class="absolute -top-4 right-6 bg-red text-white text-xs px-5 py-2 rounded-full shadow-lg" style="background:var(--red)">الأفضل قيمة</span>
     <h3 class="font-bold text-xl">عرض جوج علب</h3>
     <p class="muted text-sm mt-1">2 كيلوغرام بالمجموع</p>
-    <p class="num text-5xl my-6">499 <small class="text-base">DH</small></p>
+    <p class="num text-5xl my-6">499 DH <span class="text-xl line-through opacity-60">598</span></p>
     <ul class="text-sm mb-8 space-y-2 flex-1"><li>✓ وزن إجمالي 2 كيلو</li><li>✓ التوصيل مجاناً في جميع أنحاء المغرب</li><li class="font-bold">✓ توفير 99 درهم (بدل 598)</li></ul>
     <button type="button" class="btn btn-white w-full mt-auto" data-pick="bundle">اختر هذا العرض</button>
    </div>
@@ -200,10 +205,13 @@
 </section>
 
 <!-- HOW + FAQ -->
-<section id="how" class="max-w-4xl mx-auto px-4 py-16">
- <div class="sec-index"><b>05</b><i class="text-brand"></i></div>
- <h2 class="sec-title mb-12">كيفية الطلب بسهولة</h2>
- <ol class="grid sm:grid-cols-3 gap-6 mb-16">
+<section id="how" class="sec-green">
+<div class="max-w-4xl mx-auto px-4 py-12 md:py-20">
+ <div class="sec-head">
+  <span class="kicker">3 خطوات فقط</span>
+  <h2 class="sec-title">كيفية الطلب بسهولة</h2>
+ </div>
+ <ol class="grid md:grid-cols-3 gap-5 md:gap-6 mb-12 md:mb-16">
   <li class="step"><span class="big-n">01</span><p class="font-bold text-deep text-lg mt-12 mb-2">اختر العرض</p><p class="text-sm text-mute">علبة واحدة أو جوج علب حسب احتياجاتك.</p></li>
   <li class="step"><span class="big-n">02</span><p class="font-bold text-deep text-lg mt-12 mb-2">أدخل معلوماتك</p><p class="text-sm text-mute">الاسم والهاتف والمدينة والعنوان بالتفصيل.</p></li>
   <li class="step solid"><span class="big-n">03</span><p class="font-bold text-lg mt-12 mb-2">انتظر التأكيد</p><p class="text-sm text-white/80">البائع سيقوم بالاتصال بك لتأكيد الطلب.</p></li>
@@ -215,10 +223,11 @@
   <details class="group"><summary>شنو الفايدة ديال المنتوج؟<span class="pm text-2xl text-brand transition-transform">+</span></summary><p class="text-mute leading-relaxed">مكمل غذائي كيساعد على فتح الشهية وزيادة الوزن، ومخصص للنساء والرجال.</p></details>
   <details class="group"><summary>واش مناسب للمرضعات والأطفال؟<span class="pm text-2xl text-brand transition-transform">+</span></summary><p class="text-mute leading-relaxed">حسب البائع، المنتوج مناسب للمرضعات (كيساعد على إدرار الحليب) وللأطفال لي فوق 6 سنوات. ومع ذلك، ننصحو باستشارة طبيب أو صيدلي قبل الاستعمال، خصوصاً الحوامل والمرضعات والأطفال.</p></details>
  </div>
+</div>
 </section>
 
 <!-- PRICE BAND + ORDER -->
-<section id="order" class="pb-14" style="background:var(--soft)">
+<section id="order" class="sec-green pb-14">
  <div class="price-band">
   <h2 class="sec-title !text-2xl md:!text-3xl mb-2">اطلب بروثين رشاقة FATHIUM</h2>
   <p class="num now">499 DH <span class="old num">598 DH</span></p>
