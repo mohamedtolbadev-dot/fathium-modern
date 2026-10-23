@@ -106,13 +106,31 @@ details[open] .pm{transform:rotate(45deg)}
 details[open] summary{color:var(--brand)}
 details p{padding-bottom:1.25rem}
 
+/* Mobile Responsiveness Enhancements */
 @media(max-width:640px){
- .hero-frame{padding:28px 12px}
+ .glass{backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+ header .h-20{height:72px !important}
+ .hero-frame{padding:28px 12px;max-width:90%;margin:0 auto}
  .hero-section .btn,.hero-section .btn-ghost{width:100%}
+ .hero-title{font-size:clamp(2rem,12vw,3.5rem)}
  .row-item{gap:16px}
  .row-item .n{font-size:1.75rem;min-width:44px}
  .offer-card{padding:28px}
-}
+ .card-3d:hover{transform:translateY(-6px) rotateX(3deg)}
+ .stat-band{padding:20px 0}
+ .stat-band .grid-cols-3{gap:12px}
+ footer .grid-cols-3{grid-template-columns:1fr !important;gap:30px}
+ #bar .btn{min-height:48px}}
+
+@media(max-width:768px){
+ .hero-section .lg\\:col-span-5, .hero-section .lg\\:col-span-7{grid-column:span 12 / span 12}
+ .hero-frame{order:1}
+ .hero-section > div > div:last-child{order:2}
+ .lg\\:grid-cols-12{grid-template-columns:repeat(12,1fr)}
+ .grid.md\\:grid-cols-3{grid-template-columns:1fr}
+ .grid.md\\:grid-cols-2{grid-template-columns:1fr}
+ footer .md\\:grid-cols-3{grid-template-columns:1fr;gap:30px}
+ header nav{display:none !important}}
 
 
 /* Motion */
@@ -138,7 +156,7 @@ details p{padding-bottom:1.25rem}
 img{max-width:100%;height:auto}
 .hero-frame img{max-width:100%}
 @media(max-width:640px){
- .stat-band .big{font-size:2.25rem}
+ .stat-band .big{font-size:2rem}
  .sec-index i{width:32px}
  .summary-card{padding:24px}
  .summary-card .head{margin:-24px -24px 20px;padding:16px 24px}
@@ -146,4 +164,16 @@ img{max-width:100%;height:auto}
  .opt:has(input:checked){padding:13px}
  .hero-tag{font-size:.7rem;padding:4px 12px}
  dd,dt{overflow-wrap:anywhere}
-}
+ .hero-tags{flex-direction:column;gap:8px;align-items:flex-start}
+ #bar{padding-bottom:calc(.5rem + env(safe-area-inset-bottom));box-shadow:0 -4px 20px rgba(0,0,0,0.1)}
+ form .grid.sm\\:grid-cols-2{grid-template-columns:1fr !important}
+ form .sm\\:col-span-2{grid-column:span 1 !important}
+ textarea{min-height:100px}
+ .qty-btn{width:48px;height:48px;font-size:1.3rem}
+ #qty{font-size:1.8rem !important}
+ .step .big-n{font-size:3.5rem;left:16px;top:10px}
+ .step{padding:28px 24px}
+ .offer-card{margin:0 10px}
+ .lg\\:py-24{padding-top:40px;padding-bottom:40px}
+ .hero-frame img{height:240px !important;object-fit:contain}
+ footer .py-20{padding-top:40px;padding-bottom:40px}}
