@@ -1,11 +1,7 @@
-const SINGLE=299, BUNDLE=499, JARS=2;
-const SINGLE_DELIVERY_FEE=null; // رقم (مثلاً 30) عند تحديد ثمن التوصيل؛ null = يُحدد قبل التأكيد
-const ORDER_ENDPOINT=null;      // TODO: رابط API أو wa.me عند الربط
-const ING=['بتيكولا','بذور الأكبي','الصويا','بذور الكتان','اللوز','الفول السوداني','بذور اليقطين','كيجليا','الماكا','حب العزيز','الفصة','بذور الفصة','الحمص','العدس الأحمر','حبوب اللقاح','العكبر'];
-const CITIES=['الدار البيضاء','الرباط','فاس','مراكش','طنجة','أكادير','مكناس','وجدة','القنيطرة','تطوان','سلا','تمارة','المحمدية','الجديدة','بني ملال','خريبكة','الناظور','تازة','سطات','برشيد','المضيق','العرائش','القصر الكبير','الحسيمة','آسفي','الصويرة','ورزازات','الرشيدية','الخميسات','تاوريرت','بركان','وزان','تارودانت','إنزكان','أيت ملول','الداخلة','العيون','كلميم','الفقيه بن صالح','سيدي قاسم','سيدي سليمان','تيفلت','أزرو','إفران','شفشاون','مرتيل','الفنيدق'];
+/* FATHIUM - order logic: offers, quantity, total, validation */
 const $=id=>document.getElementById(id), fmt=n=>n.toLocaleString('en')+' DH';
-let offer=null, qty=1;
-$('ing').innerHTML=ING.map((n,i)=>`<li class="reveal flex items-baseline gap-2 border border-white/30 rounded-full px-4 py-2 text-sm" style="--d:${(i*0.05).toFixed(2)}s"><span class="num text-xs text-gold">${String(i+1).padStart(2,'0')}</span><span>${n}</span></li>`).join('');
+let offer='bundle', qty=1;
+$('ing').innerHTML=ING.map((n,i)=>`<li style="--i:${i}"><span class="num">${String(i+1).padStart(2,'0')}</span><span>${n}</span></li>`).join('');
 $('cities').innerHTML=CITIES.map(c=>`<option value="${c}">`).join('');
 function calc(){
   if(!offer) return null;
@@ -15,13 +11,14 @@ function calc(){
 function bump(el){ if(!el||!el.animate) return; el.animate([{transform:'scale(1)'},{transform:'scale(1.12)'},{transform:'scale(1)'}],{duration:260,easing:'ease-out'}); }
 function render(){
   document.querySelectorAll('input[type=radio]').forEach(r=>r.checked=r.value===offer);
-  $('qty').textContent=qty; $('ql').textContent=offer==='bundle'?'عدد العروض (كل عرض = علبتين)':'عدد العلب';
+  $('qty').textContent=qty; $('ql').textContent=offer==='bundle'?'عدد العروض':'عدد العلب';
   const c=calc();
+  const tl=$('s-total'); if(tl) tl.textContent=!c?'—':(c.total==null?fmt(c.sub)+' + التوصيل':fmt(c.total));
   if(!c){$('b-offer').textContent='اختار العرض';$('b-price').textContent='من 299 DH';return;}
   $('b-offer').textContent=c.label;$('b-price').textContent=fmt(c.sub);
-  bump($('b-price'));
+  bump($('b-price'));bump($('s-total'));
 }
-function updateHeroPricing(){
+function updateHeroPricing(){return;
   const p=$('hero-price'),o=$('hero-original-price'),b=$('hero-save-badge');
   if(offer==='bundle'){p.innerHTML='499 <small class="text-lg">DH</small>';o.style.display='inline';b.style.display='inline';}
   else{p.innerHTML='299 <small class="text-lg">DH</small>';o.style.display='none';b.style.display='none';}
@@ -37,47 +34,18 @@ function validate(){
   let ok=true;const set=(k,m)=>{$('e-'+k).textContent=m;if(m)ok=false;};
   const n=$('name').value.trim();set('name',n.length>=4&&n.split(/\s+/).length>=2?'':'المرجو إدخال الاسم الكامل.');
   set('phone',/^(?:\+212|00212|0)[5-7]\d{8}$/.test($('phone').value.replace(/[\s.\-()]/g,''))?'':'رقم غير صحيح. مثال: 0612345678 أو +212612345678');
-  set('city',CITIES.includes($('city').value.trim())?'':'المرجو اختيار مدينة من اللائحة.');
-  set('addr',$('addr').value.trim().length>=8?'':'المرجو كتابة العنوان بالتفصيل.');
+  set('city',$('city').value.trim().length>=2?'':'المرجو إدخال اسم المدينة.');
   set('offer',offer?'':'المرجو اختيار العرض.');return ok;
 }
 $('f').addEventListener('submit',e=>{
   e.preventDefault();const b=$('ok');
   if(!validate()){b.classList.add('hidden');const x=document.querySelector('.err:not(:empty)');x&&x.parentElement.querySelector('input,textarea')?.focus();return;}
   // TODO: عند الربط أرسل البيانات إلى ORDER_ENDPOINT (fetch POST) أو افتح wa.me
-  console.info('Validated order (not sent):',{name:$('name').value.trim(),phone:$('phone').value.trim(),city:$('city').value.trim(),address:$('addr').value.trim(),offer,qty,summary:calc()});
+  console.info('Validated order (not sent):',{name:$('name').value.trim(),phone:$('phone').value.trim(),city:$('city').value.trim(),offer,qty,summary:calc()});
   b.textContent='تم التحقق من المعلومات محلياً فقط. لم يتم إرسال أي طلب، ويجب ربط الصفحة بخادم طلبات أو بواتساب قبل استقبال الطلبات الحقيقية.';
   b.classList.remove('hidden');b.focus();
 });
 new IntersectionObserver(([e])=>$('bar').style.display=e.isIntersecting?'none':'',{threshold:.05}).observe($('order'));
 document.querySelectorAll('[data-pick]').forEach(b=>b.addEventListener('click',()=>{offer=b.dataset.pick;$('e-offer').textContent='';render();updateHeroPricing();$('order').scrollIntoView({behavior:'smooth'});}));
+{const a=$('wa');a.href='https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent('السلام عليكم، بغيت نطلب بروثين رشاقة من FATHIUM');a.hidden=false;}
 render();
-
-/* ---------- Animations ---------- */
-(function(){
-  if(!document.documentElement.classList.contains('js')) return;
-  // ترتيب الظهور داخل نفس الحاوية
-  const sel='.hero-section .reveal-hero,.sec-index,.sec-title,#details dl>div,#details img,.row-item,.step,.offer-card,.summary-card,#order fieldset,details,.stat-band .big,#usage img,#ingredients img,footer .grid>*';
-  const groups=new Map();
-  document.querySelectorAll(sel).forEach(el=>{
-    el.classList.add('reveal');
-    const k=el.parentElement; const i=groups.get(k)||0; groups.set(k,i+1);
-    if(!el.style.getPropertyValue('--d')) el.style.setProperty('--d',(Math.min(i,6)*0.09).toFixed(2)+'s');
-  });
-  // عناصر الـ Hero
-  document.querySelectorAll('.hero-section h1,.hero-section .max-w-lg,.hero-section .flex.items-baseline,.hero-section p.inline-flex,.hero-section .mt-8,.hero-frame').forEach((el,i)=>{el.classList.add('reveal');el.style.setProperty('--d',(i*0.1).toFixed(2)+'s');});
-  document.querySelectorAll('.hero-tag').forEach((el,i)=>el.style.setProperty('--d',(0.6+i*0.15)+'s'));
-  // عدّاد الأرقام
-  const count=el=>{
-    const to=+el.dataset.count,t0=performance.now(),dur=1200;
-    const step=t=>{const p=Math.min((t-t0)/dur,1),e=1-Math.pow(1-p,3);el.textContent=Math.round(to*e);if(p<1)requestAnimationFrame(step);};
-    el.textContent=0;requestAnimationFrame(step);
-  };
-  const io=new IntersectionObserver(es=>es.forEach(e=>{
-    if(!e.isIntersecting) return;
-    e.target.classList.add('in');
-    e.target.querySelectorAll&&e.target.querySelectorAll('[data-count]').forEach(count);
-    io.unobserve(e.target);
-  }),{threshold:.12,rootMargin:'0px 0px -40px 0px'});
-  document.querySelectorAll('.reveal,.hero-tag').forEach(el=>io.observe(el));
-})();
