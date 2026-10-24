@@ -510,3 +510,27 @@ html,body{max-width:100%;overflow-x:hidden}
 
 .lf,.lf.flip{transform:none!important;width:30px;height:30px}
 @media(max-width:767px){.lf,.lf.flip{width:24px!important;height:24px!important}}
+
+/* ===== Hero intro: صورة المنتج كتكبر، كتبقى شوية، وكترجع لبلاصتها ===== */
+.hero-grid{position:relative;z-index:4}
+.hero-img{position:relative;z-index:3;--zoom:1.55;transform-origin:center center}
+@media(min-width:768px){.hero-img{--zoom:1.35}}
+@keyframes heroZoom{
+ 0%,55%{transform:scale(var(--zoom));filter:drop-shadow(0 28px 36px rgba(0,0,0,.32))}
+ 100%{transform:scale(1);filter:drop-shadow(0 14px 18px rgba(0,0,0,.18))}
+}
+@keyframes heroDim{0%,55%{opacity:.12}100%{opacity:1}}
+.js .hero-img{animation:heroZoom 2.8s cubic-bezier(.65,0,.25,1) .3s backwards,floaty 5s ease-in-out 3.3s infinite}
+.js .hero-checks{animation:heroDim 2.8s ease .3s backwards}
+
+/* ===== Watermark: شعار FATHIUM فخلفية الأقسام (ثابت، بلا JS) ===== */
+main>section{position:relative;isolation:isolate}
+main>section::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:url(../images/watermark.webp) no-repeat;background-size:min(440px,72vw)}
+main>section:first-of-type::before{background-position:calc(100% + 70px) 90px}
+#details::before{background-position:-80px 50%}
+#usage::before{background-position:50% 50%}
+#ingredients::before{background-position:calc(100% + 80px) 50%}
+#order::before{background-position:-70px 14%}
+#how::before{background-position:calc(100% + 70px) 25%}
+main>section:last-of-type::before{background-position:50% 50%}
+@media(max-width:767px){main>section::before{background-size:min(300px,78vw)}}
